@@ -1,1 +1,8 @@
 @import 'tailwindcss';
+@theme {
+  --color-accent-500: #ff6b35;
+  --color-orion-500: #4d6bff;
+  --color-space-950: #080521;
+  --color-space-900: #0c0a2b;
+  --color-space-800: #151442;
+}
