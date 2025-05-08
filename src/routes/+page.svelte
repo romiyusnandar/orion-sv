@@ -18,6 +18,10 @@
     }, 300);
   });
 
+  function calculateDelay(index: number) {
+    return index * 100;
+  }
+
   const features = [
     {
       icon: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg>',
@@ -52,10 +56,9 @@
   ];
 
   const screenshots = [
-    'https://images.pexels.com/photos/1092644/pexels-photo-1092644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/5552789/pexels-photo-5552789.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/50614/pexels-photo-50614.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-    'https://images.pexels.com/photos/404280/pexels-photo-404280.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+    'https://i.ibb.co.com/zVYYt1nx/photo-6159137657318392047-w.jpg',
+    'https://i.ibb.co.com/fVG4r9wG/photo-6159137657318392048-w.jpg',
+    'https://i.ibb.co.com/9kT7nfbQ/photo-6158981110055421395-w.jpg',
   ];
 </script>
 
@@ -159,3 +162,32 @@
     </div>
   </section>
 {/if}
+
+<!-- Screenshots section -->
+<section class="py-20 bg-gradient-to-b from-space-950 to-space-900 relative overflow-hidden">
+  <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-px bg-gradient-to-r from-transparent via-orion-600 to-transparent"></div>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="section-title">Beautiful by Design</h2>
+      <p class="section-subtitle">
+        Experience the sleek and intuitive interface of Orion OS,
+        meticulously crafted for both aesthetics and functionality.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8">
+      {#each screenshots as screenshot, i}
+        <div class="glass-card overflow-hidden rounded-lg transition-transform hover:scale-[1.02] duration-300" in:fadeIn={{ delay: calculateDelay(i) }}>
+          <img src={screenshot} alt="OrionOS Screenshoot" class="w-full h-full object-cover aspect-[9/16] md:aspect-auto" />
+        </div>
+      {/each}
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/gallery" class="btn-secondary inline-flex items-center gap-2">
+        <span>View More Screenshoots</span>
+        <ArrowRight size={16} />
+      </a>
+    </div>
+  </div>
+</section>

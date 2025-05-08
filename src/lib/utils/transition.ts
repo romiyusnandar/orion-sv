@@ -18,9 +18,10 @@ export const [send, receive] = crossfade({
   }
 });
 
-export const fadeIn = (node: HTMLElement) => {
+export const fadeIn = (node: HTMLElement, { delay = 0 } = {}) => {
   return {
     duration: 400,
+    delay,
     css: (t: number) => `
       opacity: ${t};
       transform: translateY(${(1 - t) * 20}px);
