@@ -2,27 +2,55 @@
 @theme {
   --color-accent-500: #ff6b35;
   --color-orion-900: #1724a0;
+  --color-orion-700: #1d31e6;
   --color-orion-600: #2940ff;
   --color-orion-500: #4d6bff;
+  --color-orion-400: #809aff;
   --color-orion-300: #b3c5ff;
   --color-orion-200: #d6e0ff;
   --color-space-950: #080521;
   --color-space-900: #0c0a2b;
   --color-space-800: #151442;
+  --color-space-700: #1f1d59;
   --color-space-200: #b3b3f2;
+
+  /* Shadow */
+  --shadow-blur-glass: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 
-/* @layer components {
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-space-950 text-white font-sans;
+  }
+}
+
+@layer components {
   .btn-primary {
-    @apply inline-block px-6 py-3 bg-orion-500 text-white font-semibold rounded-lg shadow-md hover:bg-orion-600 transition-colors duration-300;
+    @apply px-6 py-3 rounded-md bg-orion-600 hover:bg-orion-700 text-white font-medium transition-all;
   }
 
-  .btn-seccondary {
-    @apply inline-block px-6 py-3 bg-transparent border-2 border-orion-500 text-orion-500 font-semibold rounded-lg hover:bg-orion-500 hover:text-white transition-colors duration-300;
+  .btn-secondary {
+    @apply px-6 py-3 rounded-md border border-orion-400 text-orion-400 hover:bg-orion-400/10 font-medium transition-all;
   }
-} */
 
-.btn-primary {
+  .glass-card {
+    @apply bg-space-900/60 backdrop-blur-[8px] shadow-blur-glass rounded-xl border border-space-700/50;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-8;
+  }
+
+  .section-subtitle {
+    @apply text-xl text-space-200 mb-12 max-w-3xl mx-auto;
+  }
+}
+
+/* .btn-primary {
   border-radius: 0.375rem;
   --tw-bg-opacity: 1;
   background-color: rgb(41 64 255 / var(--tw-bg-opacity));
@@ -63,7 +91,7 @@
 .btn-secondary:hover {
   --tw-bg-opacity: 0.1;
   background-color: rgb(128 154 255 / var(--tw-bg-opacity));
-}
+} */
 
 @keyframes twinkle {
   0%, 100% { opacity: 0.3; }

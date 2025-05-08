@@ -18,7 +18,7 @@
    class="glass-card p-6 group {isEven ? 'hover:bg-orion-500/40' : 'hover:bg-space-800/70'} transition-all duration-300"
    in:fadeScale={{ delay: 100 }}>
     {#if icon}
-      <div class="w-12 h-12 rounded-lg bg-gradient-to-br {isEven ? 'from-orion-600 to-orion-400' : 'from-accent-500 to-orion-600'} felx items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
+      <div class="w-12 h-12 rounded-lg bg-gradient-to-br {isEven ? 'from-orion-600 to-orion-400' : 'from-accent-500 to-orion-600'} flex items-center justify-center mb-4 transform group-hover:scale-110 transition-transform duration-300">
         <div class="text-white">{@html icon}</div>
       </div>
     {/if}

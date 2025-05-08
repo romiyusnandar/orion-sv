@@ -132,3 +132,30 @@
     </div>
   </section>
 {/if}
+
+<!-- Features section -->
+{#if showFeatures}
+  <section class="relative py-20 overflow-hidden" in:fadeIn>
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-6xl h-px bg-gradient-to-r via-orion-600 to-transparent"></div>
+    <div class="container mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="section-title">Why Choose OrionOS</h2>
+        <p class="section-subtitle">
+          Built by passionate developers for users who demand more from their devices.
+          Orion OS delivers exceptional performance without compromising stability.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {#each features as feature, i}
+          <FeatureCard
+            icon={feature.icon}
+            title={feature.title}
+            description={feature.description}
+            isEven={i % 2 === 0}
+          />
+        {/each}
+      </div>
+    </div>
+  </section>
+{/if}
