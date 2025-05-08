@@ -1,8 +1,75 @@
 @import 'tailwindcss';
 @theme {
   --color-accent-500: #ff6b35;
+  --color-orion-900: #1724a0;
+  --color-orion-600: #2940ff;
   --color-orion-500: #4d6bff;
+  --color-orion-300: #b3c5ff;
+  --color-orion-200: #d6e0ff;
   --color-space-950: #080521;
   --color-space-900: #0c0a2b;
   --color-space-800: #151442;
+  --color-space-200: #b3b3f2;
+}
+
+/* @layer components {
+  .btn-primary {
+    @apply inline-block px-6 py-3 bg-orion-500 text-white font-semibold rounded-lg shadow-md hover:bg-orion-600 transition-colors duration-300;
+  }
+
+  .btn-seccondary {
+    @apply inline-block px-6 py-3 bg-transparent border-2 border-orion-500 text-orion-500 font-semibold rounded-lg hover:bg-orion-500 hover:text-white transition-colors duration-300;
+  }
+} */
+
+.btn-primary {
+  border-radius: 0.375rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(41 64 255 / var(--tw-bg-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-primary:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(29 49 230 / var(--tw-bg-opacity));
+}
+
+.btn-secondary {
+  border-radius: 0.375rem;
+  border-width: 1px;
+  --tw-border-opacity: 1;
+  border-color: rgb(128 154 255 / var(--tw-border-opacity));
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  font-weight: 500;
+  --tw-text-opacity: 1;
+  color: rgb(128 154 255 / var(--tw-text-opacity));
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.btn-secondary:hover {
+  --tw-bg-opacity: 0.1;
+  background-color: rgb(128 154 255 / var(--tw-bg-opacity));
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.animate-twinkle {
+  animation: twinkle linear infinite;
 }
